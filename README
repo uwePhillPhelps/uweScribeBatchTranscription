@@ -1,0 +1,27 @@
+Scribe Batch Transcription
+
+What is it?
+This is an application (written in applescript) as part of the UWE transcription project. It is designed to process segments of a larger audio file - aiding transcription of audio using speech recognition software from MacSpeech called 'Scribe'. 
+
+It's main function is to automate the following tasks:
+
+	* configuring the OSX audio system
+		to transmit audio to a networked client
+		or to replay locally using attached speakers
+	* launching MacSpeech Scribe
+	* scanning a working directory for untranscribed audio segments
+	* configuring Scribe to transcribe each audio segment
+	* co-operating with a user, allowing transcript corrections
+	* launching QuicktimePlayer to hear audio segments
+	* configuring Scribe to update voice profiles based on corrections
+
+Requirements
+The application should work on any Macintosh (PPC or Intel) running OSX 10.4.x. It was written on OSX 10.6.2.
+
+The application foolishly assumes several very specific things about the server (username ppad, Screen Sharing enabled, apple file sharing enabled, apache server with php running with ServerRoot in /Volumes/FAT32/Apache/, etc)
+
+The application depends on Applescript for scripting,
+also SystemEvents and accessibility for assistive devices for simulating user interaction,
+also /System/Library/CoreServices/Screen Sharing.app for remote control of the server,
+also Cycling74 SoundFlower, /System/Library/Components/CoreAudio.component and /System/Developer/Applications/Audio/Audio Lab.app for remote transport of audio to networked clients,
+also MacSpeech Scribe for speech recognition and transcription,
